@@ -7,13 +7,13 @@ namespace Lab01_151524010_FerdhikaYudira.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddMemberTable : IMigrationMetadata
+    public sealed partial class AddTableMemberAndClub : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMemberTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTableMemberAndClub));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803091504566_AddMemberTable"; }
+            get { return "201803161514212_AddTableMemberAndClub"; }
         }
         
         string IMigrationMetadata.Source

@@ -12,7 +12,7 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
 {
     public class MemberController : Controller
     {
-        private MemberModels db = new MemberModels();
+        private LabModels db = new LabModels();
 
         // GET: Member
         public ActionResult Index(string search)

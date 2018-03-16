@@ -5,14 +5,14 @@ namespace Lab01_151524010_FerdhikaYudira.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Lab01_151524010_FerdhikaYudira.Models.MemberModels>
+    internal sealed class Configuration : DbMigrationsConfiguration<Lab01_151524010_FerdhikaYudira.Models.LabModels>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Lab01_151524010_FerdhikaYudira.Models.MemberModels context)
+        protected override void Seed(Lab01_151524010_FerdhikaYudira.Models.LabModels context)
         {
             //  This method will be called after migrating to the latest version.
 
