@@ -133,7 +133,6 @@ E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tuga
 E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\bin\Microsoft.Owin.Security.Google.xml
 E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\obj\Debug\Lab01_151524010_FerdhikaYudira.csprojResolveAssemblyReference.cache
 E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\obj\Debug\Lab01_151524010_FerdhikaYudira.dll
 E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\obj\Debug\Lab01_151524010_FerdhikaYudira.pdb
 E:\Kuliah\Semester 6\Pemrograman Perangkat Lunak Berorientasi Objek\Praktek\Tugas\Lab01_151524010_FerdhikaYudira\Lab01_151524010_FerdhikaYudira\obj\Debug\Lab01_151524010_FerdhikaYudira.Migrations.AddTableMemberAndClub.resources

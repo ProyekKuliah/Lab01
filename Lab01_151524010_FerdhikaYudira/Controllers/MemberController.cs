@@ -45,6 +45,7 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
         // GET: Member/Create
         public ActionResult Create()
         {
+            ViewBag.ClubNames = new SelectList(db.Club, "ClubId", "ClubName");
             return View();
         }
 
@@ -53,7 +54,7 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MemberId,FirstName,LastName,DateOfBirth,Height,Weight,Email,Phone")] Member member)
+        public ActionResult Create([Bind(Include = "MemberId,FirstName,LastName,DateOfBirth,Height,Weight,Email,Phone,ClubId")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +74,7 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Member member = db.Member.Find(id);
+            ViewBag.ClubNames = new SelectList(db.Club, "ClubId", "ClubName", member.ClubId);
             if (member == null)
             {
                 return HttpNotFound();
@@ -85,7 +87,7 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MemberId,FirstName,LastName,DateOfBirth,Height,Weight,Email,Phone")] Member member)
+        public ActionResult Edit([Bind(Include = "MemberId,FirstName,LastName,DateOfBirth,Height,Weight,Email,Phone,ClubId")] Member member)
         {
             if (ModelState.IsValid)
             {

@@ -42,6 +42,7 @@
 
 
         //Foreign key
+        [Display(Name = "Club Name")]
         public int ClubId { get; set; }
         public virtual Club Club { get; set; }
     }
