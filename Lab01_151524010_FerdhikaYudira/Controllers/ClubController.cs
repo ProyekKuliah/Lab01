@@ -17,7 +17,7 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
         // GET: Club
         public ActionResult Index()
         {
-            return View(db.Club.ToList());
+            return View(db.Club.Include(m => m.Members).ToList());
         }
 
         // GET: Club/Details/5

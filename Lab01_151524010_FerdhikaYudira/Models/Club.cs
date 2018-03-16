@@ -32,5 +32,8 @@ namespace Lab01_151524010_FerdhikaYudira.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public string EstablishedDate { get; set; }
+
+        
+        public virtual ICollection<Member> Members { get; set; }
     }
 }

@@ -18,10 +18,7 @@
             @Html.DisplayNameFor(model => model.Location)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Motto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EstablishedDate)
+            Members
         </th>
         <th></th>
     </tr>
@@ -35,14 +32,11 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Motto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstablishedDate)
+            @Html.DisplayFor(modelItem => item.Members.Count)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClubId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClubId }) |
+            <!--@Html.ActionLink("Details", "Details", new { id=item.ClubId }) |-->
             @Html.ActionLink("Delete", "Delete", new { id=item.ClubId })
         </td>
     </tr>
