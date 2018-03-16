@@ -39,5 +39,10 @@
         [Display(Name = "Telephone")]
         [StringLength(12)]
         public string Phone { get; set; }
+
+
+        //Foreign key
+        public int ClubId { get; set; }
+        public virtual Club Club { get; set; }
     }
 }
