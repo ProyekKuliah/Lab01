@@ -7,11 +7,11 @@ namespace Lab01_151524010_FerdhikaYudira.Models
 
     public class LabModels : DbContext
     {
-        // Your context has been configured to use a 'Member' connection string from your application's 
+        // Your context has been configured to use a 'LabModels' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'Lab01_151524010_FerdhikaYudira.Models.Member' database on your LocalDb instance. 
+        // 'Lab01_151524010_FerdhikaYudira.Models.LabModels' database on your LocalDb instance. 
         // 
-        // If you wish to target a different database and/or database provider, modify the 'Member' 
+        // If you wish to target a different database and/or database provider, modify the 'LabModels' 
         // connection string in the application configuration file.
         public LabModels()
             : base("name=db_lab01") // nama connection string
@@ -23,7 +23,8 @@ namespace Lab01_151524010_FerdhikaYudira.Models
 
         public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<Club> Club { get; set; }
-        
+        public virtual DbSet<Competition> Competition { get; set; }
+
     }
 
     //public class MyEntity
