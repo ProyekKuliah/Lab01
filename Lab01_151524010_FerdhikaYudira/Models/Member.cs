@@ -10,6 +10,12 @@
 
     public partial class Member
     {
+        // Constructor
+        public Member()
+        {
+            this.Competitions = new HashSet<Competition>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MemberId { get; set; }
@@ -40,10 +46,12 @@
         [StringLength(12)]
         public string Phone { get; set; }
 
-
         //Foreign key
         [Display(Name = "Club Name")]
         public int ClubId { get; set; }
         public virtual Club Club { get; set; }
+
+        // Many to many relationship
+        public virtual ICollection<Competition> Competitions { get; set; }
     }
 }

@@ -10,6 +10,12 @@ namespace Lab01_151524010_FerdhikaYudira.Models
     [Table("Competition")] //nama table
     public class Competition
     {
+        // Constructor
+        public Competition()
+        {
+            this.Members = new HashSet<Member>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompetitionId { get; set; }
@@ -37,5 +43,8 @@ namespace Lab01_151524010_FerdhikaYudira.Models
         [StringLength(255)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+
+        // Many to many relationship
+        public virtual ICollection<Member> Members { get; set; }
     }
 }

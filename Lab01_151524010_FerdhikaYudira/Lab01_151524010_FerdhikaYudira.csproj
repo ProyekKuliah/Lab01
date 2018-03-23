@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201803230228590_AddCompetitionTable.Designer.cs">
       <DependentUpon>201803230228590_AddCompetitionTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803230302480_AddManyToManyMemberCompetition.cs" />
+    <Compile Include="Migrations\201803230302480_AddManyToManyMemberCompetition.Designer.cs">
+      <DependentUpon>201803230302480_AddManyToManyMemberCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Club.cs" />
@@ -293,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803230228590_AddCompetitionTable.resx">
       <DependentUpon>201803230228590_AddCompetitionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803230302480_AddManyToManyMemberCompetition.resx">
+      <DependentUpon>201803230302480_AddManyToManyMemberCompetition.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

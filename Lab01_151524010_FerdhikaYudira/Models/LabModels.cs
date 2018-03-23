@@ -25,6 +25,19 @@ namespace Lab01_151524010_FerdhikaYudira.Models
         public virtual DbSet<Club> Club { get; set; }
         public virtual DbSet<Competition> Competition { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Custom name many to many
+            modelBuilder.Entity<Member>()
+                .HasMany<Competition>(s => s.Competitions)
+                .WithMany(c => c.Members)
+                .Map(cs =>{
+                    cs.MapLeftKey("MemberId");
+                    cs.MapRightKey("CompetitionId");
+                    cs.ToTable("MemberCompetition");
+                });
+            base.OnModelCreating(modelBuilder);
+        }
     }
 
     //public class MyEntity
