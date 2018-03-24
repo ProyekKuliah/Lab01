@@ -50,7 +50,20 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
-    </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Members)
+        </dt>
+
+        <dd>
+            <ul>
+                @foreach (var itemMember in Model.Members)
+                {
+                    <li>@itemMember.FirstName @itemMember.LastName</li> 
+                }
+            </ul>
+        </dd>
+
+</dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CompetitionId }) |

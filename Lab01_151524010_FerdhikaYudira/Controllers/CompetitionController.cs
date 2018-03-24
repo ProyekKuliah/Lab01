@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Lab01_151524010_FerdhikaYudira.Models;
+using Lab01_151524010_FerdhikaYudira.ViewModels;
 
 namespace Lab01_151524010_FerdhikaYudira.Controllers
 {
@@ -65,12 +66,25 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Competition competition = db.Competition.Find(id);
-            if (competition == null)
+            //Competition competition = db.Competition.Find(id);
+            var competitionViewModel = new CompetitionViewModel
+            {
+                Competition = db.Competition.Include(i => i.Members).First(i => i.CompetitionId == id)
+            };
+
+            if (competitionViewModel.Competition == null)
             {
                 return HttpNotFound();
             }
-            return View(competition);
+
+            var allMemberList = db.Member.ToList();
+            competitionViewModel.AllMembers = allMemberList.Select(m => new SelectListItem
+            {
+                Text = m.FirstName,
+                Value = m.MemberId.ToString()
+            });
+
+            return View(competitionViewModel);
         }
 
         // POST: Competition/Edit/5
@@ -78,15 +92,39 @@ namespace Lab01_151524010_FerdhikaYudira.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CompetitionId,Name,Location,StartDate,EndDate,Description")] Competition competition)
+        public ActionResult Edit(CompetitionViewModel competitionView)
         {
+            if (competitionView == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             if (ModelState.IsValid)
             {
-                db.Entry(competition).State = EntityState.Modified;
-                db.SaveChanges();
+                var competitionToUpdate = db.Competition
+                    .Include(c => c.Members).First(c => c.CompetitionId == competitionView.Competition.CompetitionId);
+
+                if (TryUpdateModel(competitionToUpdate, "Competition", new string[] { "Name", "Location", "StartDate", "EndDate", "Description", "CompetitionId" }))
+                {
+                    var newMembers = db.Member.Where(
+                        m => competitionView.SelectedMembers.Contains(m.MemberId)).ToList();
+                    var updatedMembers = new HashSet<int>(competitionView.SelectedMembers);
+
+                    foreach (Member member in db.Member)
+                    {
+                        if (!updatedMembers.Contains(member.MemberId))
+                        {
+                            competitionToUpdate.Members.Remove(member);
+                        }
+                        else
+                        {
+                            competitionToUpdate.Members.Add((member));
+                        }
+                    }
+                    db.Entry(competitionToUpdate).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                
                 return RedirectToAction("Index");
             }
-            return View(competition);
+            return View(competitionView);
         }
 
         // GET: Competition/Delete/5
